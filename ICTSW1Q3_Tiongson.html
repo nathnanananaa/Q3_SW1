@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP to USD and KRW Currency Converter</title>
+</head>
+<body>
+    <h1>Converting Currencies!</h1>
+    <p>Click the button below to convert:</p>
+    <p>Amount in PHP: <b>1000</b></p>
+    <p id="display"></p>
+    <button onclick="convertToUSD()">Convert to USD</button>
+    <button onclick="convertToWON()">Convert to WON</button>
+    <button onclick="location.reload()">Refresh</button>
+
+
+    <script>
+        function convertToUSD() {
+            const php = 1000;
+            const exchangeRate = 58.66;
+            const usd = php / exchangeRate;
+            document.getElementById('display').innerText = `Equivalent in USD: $${usd.toFixed(2)}`;
+        }
+
+        function convertToWON() {
+            const php = 1000;
+            const exchangeRate = 0.040;
+            const won = php / exchangeRate;
+            document.getElementById('display').innerText = `Equivalent in WON: ₩${won.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
